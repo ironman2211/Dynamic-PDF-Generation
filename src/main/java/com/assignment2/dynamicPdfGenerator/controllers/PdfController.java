@@ -1,6 +1,7 @@
 package com.assignment2.dynamicPdfGenerator.controllers;
 
 import com.assignment2.dynamicPdfGenerator.models.InvoiceRequest;
+import com.assignment2.dynamicPdfGenerator.services.PdfService;
 import com.assignment2.dynamicPdfGenerator.services.impl.PdfServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -14,7 +15,7 @@ import java.io.IOException;
 public class PdfController {
 
     @Autowired
-    private PdfServiceImpl pdfService;
+    private PdfService pdfService;
 
     @PostMapping("/generate-pdf")
     public ResponseEntity<String> generatePdf(@RequestBody InvoiceRequest invoiceRequest) {
